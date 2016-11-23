@@ -1,4 +1,4 @@
-<script type="text/javascript" src="<?php echo SPECIALISTS_JS_PATH ?>jquery.bootpag.min.js"></script>
+<script type="text/javascript" src="<?php echo SPECIALISTS_JS_LIB_PATH ?>jquery.bootpag.min.js"></script>
 <script type="text/javascript" src="<?php echo SPECIALISTS_JS_PATH ?>list_specialists.js" ></script>
 <section id='home' class='head-main-img'>
 <div class='container'>

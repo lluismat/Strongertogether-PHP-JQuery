@@ -13,7 +13,7 @@ function refresh(){
 
 function search(keyword){
 
-      $.post("../../products_specialists/num_pages/", {'num_pages': true, 'keyword': keyword}, function (data, status) {
+      $.post("../../specialists/num_pages/", {'num_pages': true, 'keyword': keyword}, function (data, status) {
 
       console.log(data);
       var json = JSON.parse(data);
@@ -52,11 +52,10 @@ reset();
 
 }//fi function search
 
-function search_product(keyword) {
-    //$.get("index.php?module=products_frontend&function=name_products&name_products="+keyword, function(data, status){
-    $.post("../../specialists/name_specialists/", {'name_products': keyword}, function (data, status) {
+function search_specialists(keyword) {
+    $.post("../../specialists/name_specialists/", {'name_specialists': keyword}, function (data, status) {
         var json = JSON.parse(data);
-        var product = json.product_autocomplete;
+        var product = json.specialists_autocomplete;
 
         $('#results').html('');
         $('.pagination').html('');
@@ -80,11 +79,10 @@ function search_product(keyword) {
     });
 }//fi function search_product
 
-function count_product(keyword) {
-    //$.get("index.php?module=products_frontend&function=count_products&count_product=" + keyword, function (data, status) {
-    $.post("../../specialists/count_specialists/", {'count_product': keyword}, function (data, status) {
+function count_specialists(keyword) {
+    $.post("../../specialists/count_specialists/", {'count_specialists': keyword}, function (data, status) {
         var json = JSON.parse(data);
-        var num_products = json.num_products;
+        var num_products = json.num_specialists;
 
         if (num_products == 0) {
             $("#results").load("../../specialists/view_error_false/", {'view_error': false}); //view_error=false
@@ -92,7 +90,7 @@ function count_product(keyword) {
             reset();
         }
         if (num_products == 1) {
-            search_product(keyword);
+            search_specialists(keyword);
         }
         if (num_products > 1) {
             search(keyword);
@@ -121,7 +119,7 @@ $(document).ready(function () {
 
     if (getCookie("search")) {
         var keyword=getCookie("search");
-        count_product(keyword);
+        count_specialists(keyword);
         //alert("carrega pagina getCookie(search): " + getCookie("search"));
        //("#keyword").val(keyword) if we don't use refresh(), this way we could show the search param
         setCookie("search","",1);
@@ -153,13 +151,12 @@ $(document).ready(function () {
 
     });
 
-    //$.get("index.php?module=products_frontend&function=autocomplete&autocomplete=true", function (data, status) {
     $.post("../../specialists/autocomplete/", {'autocomplete': true}, function (data, status) {
         var json = JSON.parse(data);
-        var name_products = json.nom_productos;
+        var name_products = json.nom_specialists;
 
         var suggestions = new Array();
-        for (var i = 0; i < name_products.length; i++) {
+        for (var i = 0; i < name_specialists.length; i++) {
             suggestions.push(name_products[i].name);
         }
         $("#keyword").autocomplete({
@@ -167,7 +164,7 @@ $(document).ready(function () {
             minLength: 1,
             select: function (event, ui) {
                 var keyword = ui.item.label;
-                count_product(keyword);
+                count_specialists(keyword);
             }
         });
     }).fail(function (xhr) {

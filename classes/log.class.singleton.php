@@ -24,7 +24,7 @@ class log {
     public function add_log_products($msg, $username = "", $controller, $function) {
         $date = date('d.m.Y h:i:s');
         $log = $msg . " | " . $date . "  |  Product:  " . $username . " | " . $controller . " | " . $function . "\n";
-        error_log($log, 3, PRODUCTS_LOG_DIR);
+        error_log($log, 3, SPECIALISTS_LOG_DIR);
     }
 
 }

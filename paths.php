@@ -17,7 +17,7 @@ define('JS_PATH', SITE_PATH . 'view/js/');
 
 //log
 define('LOG_DIR',SITE_ROOT.'classes/log.class.singleton.php');
-define('PRODUCTS_LOG_DIR',SITE_ROOT.'log/products/Site_Products_errors.log');
+define('SPECIALISTS_LOG_DIR',SITE_ROOT.'log/specialists/Site_Specialists_errors.log');
 define('GENERAL_LOG_DIR',SITE_ROOT.'log/general/Site_General_errors.log');
 
 //production

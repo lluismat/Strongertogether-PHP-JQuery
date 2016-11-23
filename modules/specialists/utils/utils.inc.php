@@ -1,8 +1,8 @@
 <?php
 function paint_template_error($message) {
     $log = log::getInstance();
-    $log->add_log_general("error paint_template_error", "products", "response" . http_response_code()); //$text, $controller, $function
-    $log->add_log_products("error paint_template_error", "", "products", "response" . http_response_code()); //$msg, $username = "", $controller, $function
+    $log->add_log_general("error paint_template_error", "specialists", "response" . http_response_code()); //$text, $controller, $function
+    $log->add_log_specialists("error paint_template_error", "", "specialists", "response" . http_response_code()); //$msg, $username = "", $controller, $function
 
     print( "<section id='error' class='container'>");
     print('<div id="page">');
@@ -40,7 +40,7 @@ function paint_template_products($arrData) {
 
             print( '<div class="table-row">');
             print('<div class="table-cell">');
-            print ("<div class='id_prod' id='".$product['id']."'>");
+            print ("<div class='id_specialists' id='".$product['id']."'>");
             print('<div class="pull-left">');
             print('<img src="' . $product['avatar'] . '" class="icon-md" height="80" width="80">');
             print('</div>');
@@ -62,8 +62,8 @@ function paint_template_products($arrData) {
 }
 function paint_template_search($message) {
     $log = log::getInstance();
-    $log->add_log_general("error paint_template_search", "products", "response " . http_response_code()); //$text, $controller, $function
-    $log->add_log_products("error paint_template_search", "", "products", "response " . http_response_code()); //$msg, $username = "", $controller, $function
+    $log->add_log_general("error paint_template_search", "specialists", "response " . http_response_code()); //$text, $controller, $function
+    $log->add_log_specialists("error paint_template_search", "", "specialists", "response " . http_response_code()); //$msg, $username = "", $controller, $function
 
     print ("<section> \n");
     print ("<div class='container'> \n");

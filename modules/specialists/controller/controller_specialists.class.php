@@ -23,14 +23,14 @@ class controller_specialists{
     if ((isset($_POST["autocomplete"])) && ($_POST["autocomplete"] === "true")) {
         set_error_handler('ErrorHandler');
         try {
-            $nameProducts = loadModel(MODEL_SPECIALISTS, "products_model", "select_column_products", "name_prod");
+            $namespecialists = loadModel(MODEL_SPECIALISTS, "specialists_model", "select_column_products", "name");
         } catch (Exception $e) {
             showErrorPage(2, "ERROR - 503 BD", 'HTTP/1.0 503 Service Unavailable', 503);
         }
         restore_error_handler();
 
-        if ($nameProducts) {
-            $jsondata["nom_productos"] = $nameProducts;
+        if ($namespecialists) {
+            $jsondata["nom_specialists"] = $namespecialists;
             echo json_encode($jsondata);
             exit;
         } else {
@@ -40,9 +40,9 @@ class controller_specialists{
   }
 
   public function name_specialists(){
-    if (($_POST["name_products"])) {
+    if (($_POST["name_specialists"])) {
         //filtrar $_GET["nom_product"]
-        $result = filter_string($_POST["name_products"]);
+        $result = filter_string($_POST["name_specialists"]);
         if ($result['resultado']) {
             $criteria = $result['datos'];
         } else {
@@ -55,7 +55,7 @@ class controller_specialists{
                 "column" => "name",
                 "like" => $criteria
             );
-            $producto = loadModel(MODEL_SPECIALISTS, "products_model", "select_like_products", $arrArgument);
+            $specialist = loadModel(MODEL_SPECIALISTS, "specialists_model", "select_like_products", $arrArgument);
 
             //throw new Exception(); //que entre en el catch
         } catch (Exception $e) {
@@ -63,8 +63,8 @@ class controller_specialists{
         }
         restore_error_handler();
 
-        if ($producto) {
-            $jsondata["product_autocomplete"] = $producto;
+        if ($specialist) {
+            $jsondata["specialists_autocomplete"] = $specialist;
             echo json_encode($jsondata);
             exit;
         } else {
@@ -74,9 +74,9 @@ class controller_specialists{
   }
 
   public function count_specialists(){
-    if (isset($_POST["count_product"])) {
+    if (isset($_POST["count_specialists"])) {
 
-        $result = filter_string($_POST["count_product"]);
+        $result = filter_string($_POST["count_specialists"]);
         if ($result['resultado']) {
             $criteria = $result['datos'];
         } else {
@@ -89,7 +89,7 @@ class controller_specialists{
                 "column" => "name",
                 "like" => $criteria
             );
-            $result = loadModel(MODEL_SPECIALISTS, "products_model", "count_like_products", $arrArgument);
+            $result = loadModel(MODEL_SPECIALISTS, "specialists_model", "count_like_products", $arrArgument);
             //throw new Exception(); //que entre en el catch
         } catch (Exception $e) {
             showErrorPage(2, "ERROR - 503 BD", 'HTTP/1.0 503 Service Unavailable', 503);
@@ -97,7 +97,7 @@ class controller_specialists{
         restore_error_handler();
 
         if ($result) {
-            $jsondata["num_products"] = $result[0]["total"];
+            $jsondata["num_specialists"] = $result[0]["total"];
             echo json_encode($jsondata);
             exit;
         } else {
@@ -132,7 +132,7 @@ class controller_specialists{
                   "like" => $criteria
               );
               //throw new Exception();
-              $result = loadModel(MODEL_SPECIALISTS, "products_model", "count_like_products", $arrArgument);
+              $result = loadModel(MODEL_SPECIALISTS, "specialists_model", "count_like_products", $arrArgument);
               $get_result = $result[0]["total"]; //total records
               $pages = ceil($get_result / $item_per_page); //break total records into pages
               //ceil redondea fracciones hacia arriba
@@ -166,9 +166,9 @@ class controller_specialists{
 
     public function id(){
       ///Coge el cod_prod
-      if ($_POST["idProducto"]) {
+      if ($_POST["idSpecialists"]) {
 
-          $result = filter_num_int($_POST["idProducto"]);
+          $result = filter_num_int($_POST["idSpecialists"]);
           if ($result['resultado']) {
               $id = $result['datos'];
           } else {
@@ -176,17 +176,17 @@ class controller_specialists{
           }
           set_error_handler('ErrorHandler');
           try {
-              $producto = false;
+              $specialists = false;
 
-              $producto = loadModel(MODEL_SPECIALISTS, "products_model", "details_products", $id);
+              $specialists = loadModel(MODEL_SPECIALISTS, "specialists_model", "details_products", $id);
           } catch (Exception $e) {
               //header('HTTP/1.0 503 Service Unavailable', true, 503);
               // loadView("503");
               showErrorPage(2, "ERROR - 503 BD", 'HTTP/1.0 503 Service Unavailable', 503);
           }
           restore_error_handler();
-          if ($producto) {
-              $jsondata["product"] = $producto[0];
+          if ($specialists) {
+              $jsondata["specialists"] = $specialists[0];
               echo json_encode($jsondata);
               exit;
           } else {
@@ -239,7 +239,7 @@ class controller_specialists{
 
       try {
 
-          $resultado = loadModel(MODEL_SPECIALISTS, "products_model", "select_like_limit_products", $arrArgument);
+          $resultado = loadModel(MODEL_SPECIALISTS, "specialists_model", "select_like_limit_products", $arrArgument);
 
           } catch (Exception $e) {
 

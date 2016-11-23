@@ -5,9 +5,7 @@
       <li class="active"><a href="<?php amigable('?module=main'); ?>">Home</a></li>
       <li><a href="">Users</a></li>
       <li><a href="<?php amigable('?module=specialists&function=list_specialists'); ?>">Specialists</a></li>
-      <li><a href="typo.html">Short Codes</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="<?php amigable('?module=contact&function=loadcontact'); ?>">Contact</a></li>
     </ul>
 </div>
 <!--navigation-end-->
