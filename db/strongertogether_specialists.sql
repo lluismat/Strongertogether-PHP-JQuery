@@ -4,7 +4,7 @@ USE `strongertogether`;
 --
 -- Host: localhost    Database: strongertogether
 -- ------------------------------------------------------
--- Server version	5.7.16-0ubuntu0.16.04.1
+-- Server version	5.5.50-0+deb7u2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,7 +28,7 @@ CREATE TABLE `specialists` (
   `id` int(20) NOT NULL,
   `name` varchar(30) NOT NULL,
   `surname` varchar(30) NOT NULL,
-  `speciality` varchar(45) NOT NULL,
+  `specialty` varchar(45) NOT NULL,
   `city` varchar(50) NOT NULL,
   `province` varchar(50) NOT NULL,
   `country` varchar(50) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `specialists` (
 
 LOCK TABLES `specialists` WRITE;
 /*!40000 ALTER TABLE `specialists` DISABLE KEYS */;
-INSERT INTO `specialists` VALUES (1,'Javier','Gonzalez','Cardiology','BADALONA','08','ES','/proyecto_v3/media/1279412902-1025640568-flowers.png'),(2,'James','Adams','Neurology','default','default','US','/proyecto_v3/media/1279412902-1025640568-flowers.png'),(3,'Paula','Vaño Calabuig ','Cardiology','BADALONA','08','ES','/proyecto_v3/media/1279412902-1025640568-flowers.png');
+INSERT INTO `specialists` VALUES (1,'Javier','Gonzalez','Cardiology','BADALONA','08','ES','/proyecto_v3/media/1279412902-1025640568-flowers.png'),(2,'James','Adams','Neurology','default','default','US','/proyecto_v3/media/1279412902-1025640568-flowers.png'),(3,'Paula','Vaño Calabuig ','Cardiology','BADALONA','08','ES','/proyecto_v3/media/1279412902-1025640568-flowers.png'),(4,'Jaume','Cabanes Miro','Cardiology','BADALONA','08','ES','/proyecto_v3/media/1279412902-1025640568-flowers.png'),(5,'Pepe','Belda Sempere','Neurology','Valencia','cv','ES','/proyecto_v3/media/1279412902-1025640568-flowers.png'),(6,'Lara','Croft ','Neurology','New York','default','US','/proyecto_v3/media/1279412902-1025640568-flowers.png'),(7,'Francisco','Domenech','Microbiology','BADALONA','08','ES','/proyecto_v3/media/1279412902-1025640568-flowers.png');
 /*!40000 ALTER TABLE `specialists` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-23 16:41:29
+-- Dump completed on 2016-11-24 12:31:41

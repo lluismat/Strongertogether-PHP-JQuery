@@ -63,8 +63,6 @@ function paint_template_products($arrData) {
 function paint_template_search($message) {
     $log = log::getInstance();
     $log->add_log_general("error paint_template_search", "specialists", "response " . http_response_code()); //$text, $controller, $function
-    $log->add_log_specialists("error paint_template_search", "", "specialists", "response " . http_response_code()); //$msg, $username = "", $controller, $function
-
     print ("<section> \n");
     print ("<div class='container'> \n");
     print ("<div class='row text-center pad-row'> \n");

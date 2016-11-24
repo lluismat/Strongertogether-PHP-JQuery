@@ -153,11 +153,11 @@ $(document).ready(function () {
 
     $.post("../../specialists/autocomplete/", {'autocomplete': true}, function (data, status) {
         var json = JSON.parse(data);
-        var name_products = json.nom_specialists;
+        var nom_specialists = json.nom_specialists;
 
         var suggestions = new Array();
-        for (var i = 0; i < name_specialists.length; i++) {
-            suggestions.push(name_products[i].name);
+        for (var i = 0; i < nom_specialists.length; i++) {
+            suggestions.push(nom_specialists[i].name);
         }
         $("#keyword").autocomplete({
             source: suggestions,
