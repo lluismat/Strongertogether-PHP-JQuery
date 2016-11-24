@@ -4,7 +4,7 @@
         //alert(id);
         $.post("../../specialists/id/", {'idSpecialists': id}, function (data, status) {
             var json = JSON.parse(data);
-            var specialists = json.product;
+            var specialists = json.specialists;
 
             $('#results').html('');
             $('.pagination').html('');

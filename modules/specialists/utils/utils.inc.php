@@ -28,10 +28,9 @@ function paint_template_error($message) {
 }
 
 function paint_template_products($arrData) {
-    print ("<script type='text/javascript' src='". SPECIALISTS_JS_PATH. "/modal_products.js'></script>");
+    print ("<script type='text/javascript' src='". SPECIALISTS_JS_PATH . "modal_specialists.js'></script>");
     print('<section id="services" >');
     print('<div class="container">');
-
     print('<div class="table-display">');
 
     if (isset($arrData) && !empty($arrData)) {
@@ -40,7 +39,7 @@ function paint_template_products($arrData) {
 
             print( '<div class="table-row">');
             print('<div class="table-cell">');
-            print ("<div class='id_specialists' id='".$product['id']."'>");
+            print ('<div class="idSpecialist" id="'. $product['id'] .'">');
             print('<div class="pull-left">');
             print('<img src="' . $product['avatar'] . '" class="icon-md" height="80" width="80">');
             print('</div>');
