@@ -1,24 +1,25 @@
-//$(document).ready(function () {
-    $('.id_specialists').click(function () {
+  $('.id_specialist').click(function () {
         var id = this.getAttribute('id');
+        console.log(id);
         //alert(id);
         $.post("../../specialists/id/", {'idSpecialists': id}, function (data, status) {
             var json = JSON.parse(data);
             var specialists = json.specialists;
+            console.log(specialists);
 
             $('#results').html('');
             $('.pagination').html('');
 
             var avatar = document.getElementById('avatar');
-            avatar.innerHTML = '<img src="' + specialists[0].avatar + '" class="img-product"> ';
+            avatar.innerHTML = '<img src="' + specialists.avatar + '" class="img-product"> ';
             var name = document.getElementById('name');
-            name.innerHTML = specialists[0].name;
+            name.innerHTML = specialists.name;
             var surname = document.getElementById('surname');
-            surname.innerHTML = specialists[0].surname;
+            surname.innerHTML = specialists.surname;
             var city = document.getElementById('city');
-            city.innerHTML = "City: " + specialists[0].city;
+            city.innerHTML = "City: " + specialists.city;
             var specialty = document.getElementById('specialty');
-            specialty.innerHTML = specialists[0].specialty;
+            specialty.innerHTML = specialists.specialty;
             specialty.setAttribute("class", "special");
 
         })

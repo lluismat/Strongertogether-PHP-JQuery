@@ -39,7 +39,7 @@ function paint_template_products($arrData) {
 
             print( '<div class="table-row">');
             print('<div class="table-cell">');
-            print ('<div class="idSpecialist" id="'. $product['id'] .'">');
+            print ('<div class="id_specialist" id="'. $product['id'] .'">');
             print('<div class="pull-left">');
             print('<img src="' . $product['avatar'] . '" class="icon-md" height="80" width="80">');
             print('</div>');
