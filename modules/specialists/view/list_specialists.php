@@ -17,7 +17,7 @@
            <input name="Submit" id="Submit" class="button_search" type="button" value="Search"/>
          </form>
        </div>
-       </center>
+     </center>
 
 <div id="results"></div>
 
@@ -27,8 +27,8 @@
 
 
 <section>
-  <section >
-      <div class="details" id="product">
+  <section>
+      <div class="details" id="specialists">
               <div class="pull-left">
                   <div id="avatar" class="avatardetail"></div>
               </div>

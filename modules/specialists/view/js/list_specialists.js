@@ -55,22 +55,22 @@ reset();
 function search_specialists(keyword) {
     $.post("../../specialists/name_specialists/", {'name_specialists': keyword}, function (data, status) {
         var json = JSON.parse(data);
-        var product = json.specialists_autocomplete;
+        var specialists = json.specialists_autocomplete;
 
         $('#results').html('');
         $('.pagination').html('');
 
         var avatar = document.getElementById('avatar');
-        avatar.innerHTML = '<img src="' + product[0].avatar + '" class="img-product"> ';
+        avatar.innerHTML = '<img src="' + specialists[0].avatar + '" class="img-product"> ';
         var name = document.getElementById('name');
-        name.innerHTML = product[0].name;
+        name.innerHTML = specialists[0].name;
         var surname = document.getElementById('surname');
-        surname.innerHTML = product[0].surname;
-        var city = document.getElementById('price_prod');
-        city.innerHTML = "City: " + product[0].city;
+        surname.innerHTML = specialists[0].surname;
+        var city = document.getElementById('city');
+        city.innerHTML = "City: " + specialists[0].city;
         var specialty = document.getElementById('specialty');
-        specialty.innerHTML = product[0].specialty;
-        specialty.setAttribute("class", "special");
+        specialty.innerHTML = "Specialty: "+ specialists[0].specialty;
+
 
     }).fail(function (xhr) {
         $("#results").load("../../specialists/view_error_false/", {'view_error': false});
@@ -109,7 +109,6 @@ function reset() {
     $('#surname').html('');
     $('#specialty').html('');
     $('#city').html('');
-    $('#city').removeClass("special");
 
     $('#keyword').val('');
 }
@@ -120,8 +119,6 @@ $(document).ready(function () {
     if (getCookie("search")) {
         var keyword=getCookie("search");
         count_specialists(keyword);
-        //alert("carrega pagina getCookie(search): " + getCookie("search"));
-       //("#keyword").val(keyword) if we don't use refresh(), this way we could show the search param
         setCookie("search","",1);
     } else {
         search();
@@ -133,11 +130,7 @@ $(document).ready(function () {
         var v_keyword = validate_search(keyword);
         if (v_keyword)
             setCookie("search", keyword, 1);
-        //alert("getCookie(search): " + getCookie("search"));
         location.reload(true);
-
-
-        //si no ponemos la siguiente línea, el navegador nos redirecciona a index.php
         e.preventDefault(); //STOP default action
     });
 
