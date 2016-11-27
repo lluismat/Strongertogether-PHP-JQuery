@@ -10,6 +10,6 @@
 
             loadView('modules/main/view/', 'main.html');
 
-            require_once(VIEW_PATH_INC."footer.html");
+            require_once(VIEW_PATH_INC."footer.php");
         }
     }

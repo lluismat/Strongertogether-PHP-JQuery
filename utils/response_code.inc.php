@@ -100,7 +100,6 @@ function showErrorPage($code = 0, $message = "", $http = "", $num_http = 0) {
         case 2:
             $log = log::getInstance();
             $log->add_log_general($message, "", "response " . http_response_code()); //$text, $controller, $function
-            $log->add_log_products($message, "", "", "response " . http_response_code()); //$msg, $username = "", $controller, $function
 
             $jsondata["error"] = $message;
             //header($http, true, $num_http);
@@ -115,7 +114,7 @@ function showErrorPage($code = 0, $message = "", $http = "", $num_http = 0) {
         require_once(VIEW_PATH_INC . "header.php");
         require_once(VIEW_PATH_INC . "menu.php");
         loadView(400);
-        require_once(VIEW_PATH_INC . "footer.html");
+        require_once(VIEW_PATH_INC . "footer.php");
         break;
     }
 }
@@ -143,5 +142,4 @@ function ErrorHandler($errno, $errstr, $errfile, $errline) {
 
     $log = log::getInstance();
     $log->add_log_general($msg, $_SESSION['module'], "response " . http_response_code()); //$text, $controller, $function
-    $log->add_log_products($msg, "", $_SESSION['module'], "response " . http_response_code()); //$msg, $username = "", $controller, $function
 }

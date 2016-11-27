@@ -39,7 +39,6 @@
 
           $log = log::getInstance();
           $log->add_log_general("error loadView general", $_GET['module'], "response " . $rutaVista); //$text, $controller, $function
-          $log->add_log_products("error loadView general", "", $_GET['module'], "response " . $rutaVista); //$msg, $username = "", $controller, $function
 
           $result = response_code($rutaVista);
           $arrData = $result;

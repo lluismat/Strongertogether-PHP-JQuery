@@ -37,7 +37,10 @@ define('RESOURCES',SITE_ROOT.'resources/');
 define('MEDIA_PATH',SITE_ROOT.'media/');
 //utils
 define('UTILS',SITE_ROOT.'utils/');
-
+//libs
+define('LIBS',SITE_ROOT.'libs/');
+//classes
+define('CLASSES',SITE_ROOT.'classes/');
 //amigables
 define('URL_AMIGABLES', TRUE);
 
@@ -49,3 +52,10 @@ define('BLL_SPECIALISTS',SITE_ROOT.'modules/specialists/model/BLL/');
 define('MODEL_SPECIALISTS',SITE_ROOT.'modules/specialists/model/model/');
 define('SPECIALISTS_JS_PATH', SITE_PATH . 'modules/specialists/view/js/');
 define('SPECIALISTS_JS_LIB_PATH', SITE_PATH . 'modules/specialists/view/lib/');
+
+//model contact
+define('CONTACT_JS_PATH', SITE_PATH . 'modules/contact/view/js/');
+define('CONTACT_CSS_PATH', SITE_PATH . 'modules/contact/view/css/');
+define('CONTACT_LIB_PATH', SITE_PATH . 'modules/contact/view/lib/');
+define('CONTACT_IMG_PATH', SITE_PATH . 'modules/contact/view/img/');
+define('CONTACT_VIEW_PATH', 'modules/contact/view/');

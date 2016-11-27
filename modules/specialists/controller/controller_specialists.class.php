@@ -15,7 +15,7 @@ class controller_specialists{
 
     loadView('modules/specialists/view/','list_specialists.php');
 
-    require_once(VIEW_PATH_INC."footer.html");
+    require_once(VIEW_PATH_INC."footer.php");
 
   }
 

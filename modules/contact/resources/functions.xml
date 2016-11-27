@@ -4,4 +4,8 @@
         <name>loadcontact</name>
         <uri>loadcontact</uri>
     </function>
+    <function>
+        <name>process_contact</name>
+        <uri>process_contact</uri>
+    </function>
 </functions>
