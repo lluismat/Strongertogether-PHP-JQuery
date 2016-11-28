@@ -44,6 +44,9 @@ define('CLASSES',SITE_ROOT.'classes/');
 //amigables
 define('URL_AMIGABLES', TRUE);
 
+//favicon
+define('FAVICON',SITE_ROOT.'view/images/');
+
 //model specialists
 define('FUNCTIONS_SPECIALISTS',SITE_ROOT.'modules/specialists/utils/');
 define('MODEL_PATH_SPECIALISTS',SITE_ROOT.'modules/specialists/model/');

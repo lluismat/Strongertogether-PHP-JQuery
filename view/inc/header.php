@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Strongtogether</title>
+<link rel="shortcut icon" href="<?php echo FAVICON ?>favicon.ico" />
+<title>Strongertogether/<?php if(!isset($_GET['module'])){
+	echo "/Home";
+}else{
+	echo $_GET['module'];
+} ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Baby Care Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
